@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>REGISTRATION PAGE</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+    <style>
+        .bg{
+            background-image:url("./dow4.jpg");
+            height:100vh;
+            background-size:cover;  
+            padding:30px
+        }
+        .card{
+            height:550px;
+            width:500px;
+            border-style:solid;
+            border-width:4px;
+            border-color:whitesmoke;
+            border-radius:10px;
+            margin-left:390px;
+            margin-top:5px;
+            background-color:transparent;
+            padding:20px;
+        }
+        .head{
+            color:beige;
+            text-align:center;
+        }
+        .head1{
+            color:aliceblue;
+            font-size:20px;
+        }
+        .user-input{
+            background-color:transparent;
+            border-color:white;
+            border-radius:8px;
+            font-size:30px;
+            color:aliceblue;
+        }
+        .but{
+            text-align:center;
+        }
+        .button{
+            background-color:transparent;
+            padding:20px;
+            color:white;
+            font-size: 30px;
+            border-radius:8px;
+            border-color:beige;
+            border-width:2px;
+        }
+        .para{
+            color:white;
+            font-size:30px;
+            text-align:center;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="bg">
+            <div class="card">
+                <h1 class="head">REGISTRATION FORM</h1>
+                <hr/>
+                <h1 class="head1">USERNAME</h1>
+                
+                <input type="text" class="user-input" id="userName" name="username"/>
+                <br/>
+                <h1 class="head1">EMAIL</h1>
+                
+                <input type="text" class="user-input" id="userEmail" name="email"/>
+                <br/>
+                <h1 class="head1">PASSWORD</h1>
+                
+                <input type="password" class="user-input" id="userPass" name="pwd"/>
+                <br/>
+                <div class="but">
+                    <button class="button" id="regButton" onclick="displayOn()">REGISTER</button>
+                </div>
+            </div>
+            <p class="para" id="errorMes"></p>
+
+        </div>
+        <script>
+            let errorE1=document.getElementById("errorMes");
+            let userE1=document.getElementById("userEmail");
+            let passE1=document.getElementById("userPass");
+            let nameE1=document.getElementById("userName");
+            let butE1=document.getElementById("regButton");
+            function displayOn(){
+                let mes1=passE1.value;
+                let mes2=userE1.value;
+                let mes3=nameE1.value;
+                let mes4=mes1.length;
+                if(mes1===""){
+                    errorE1.textContent="*Please enter your password!!!";
+                }
+                else if(mes2===""){
+                    errorE1.textContent="*Please enter your email!!!";
+                }
+                else if(mes3===""){
+                    errorE1.textContent="*Please enter your username!!!";
+                }
+                else if(mes4<8){
+                    errorE1.textContent="*Password must be atleast 8 characters!!!";
+                }
+                else{
+                    errorE1.textContent="Registered Successfully!!!";
+                }
+            }
+
+        </script>
+    </body>
+</html>
